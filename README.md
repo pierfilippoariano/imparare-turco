@@ -10,8 +10,7 @@ spuntano sempre fuori) mi restano davvero in testa invece di restare sulla carta
 Il motore genera dal vivo plurali, casi e coniugazioni turche seguendo le vere regole di armonia
 vocalica e mutazione consonantica, e li spiega in italiano mentre scrivo.
 
-**Demo live:** _(sostituisci con il link a GitHub Pages dopo il primo deploy, es.
-`https://pierfilippoariano.github.io/NOME-REPO/`)_
+**Demo live:** [pierfilippoariano.github.io/imparare-turco](https://pierfilippoariano.github.io/imparare-turco/)
 
 ## Cosa fa
 
