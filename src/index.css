@@ -1,0 +1,98 @@
+:root {
+  /* Palette ispirata a Duolingo */
+  --duo-green: #58cc02;
+  --duo-green-dark: #58a700;
+  --duo-blue: #1cb0f6;
+  --duo-blue-dark: #1899d6;
+  --duo-red: #ff4b4b;
+  --duo-red-dark: #ea2b2b;
+  --duo-yellow: #ffc800;
+  --duo-yellow-dark: #e6b400;
+
+  --text: #4b4b4b;
+  --text-h: #3c3c3c;
+  --bg: #fff;
+  --border: #e5e5e5;
+  --code-bg: #f7f7f7;
+  --accent: var(--duo-green);
+  --accent-strong: var(--duo-green-dark);
+  --accent-bg: rgba(88, 204, 2, 0.12);
+  --accent-border: rgba(88, 204, 2, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: "Archivo", system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: "Archivo", system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.1px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #b4b4b4;
+    --text-h: #f3f4f6;
+    --bg: #131f24;
+    --border: #2b3940;
+    --code-bg: #1c2b32;
+    --accent: #6fda2c;
+    --accent-strong: #89e219;
+    --accent-bg: rgba(111, 218, 44, 0.15);
+    --accent-border: rgba(111, 218, 44, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading);
+  font-weight: 800;
+  color: var(--text-h);
+}
+
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
