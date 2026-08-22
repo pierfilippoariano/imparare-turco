@@ -1,25 +1,44 @@
 :root {
-  /* Palette ispirata a Duolingo */
-  --duo-green: #58cc02;
-  --duo-green-dark: #58a700;
-  --duo-blue: #1cb0f6;
-  --duo-blue-dark: #1899d6;
-  --duo-red: #ff4b4b;
-  --duo-red-dark: #ea2b2b;
-  --duo-yellow: #ffc800;
-  --duo-yellow-dark: #e6b400;
+  /* Palette ispirata alla bandiera turca: rosso acceso in gradiente verso l'arancio/oro */
+  --tr-red: #e30a17;
+  --tr-red-deep: #a90410;
+  --tr-orange: #ff5a2e;
+  --tr-gold: #ffb020;
 
-  --text: #4b4b4b;
-  --text-h: #3c3c3c;
-  --bg: #fff;
-  --border: #e5e5e5;
-  --code-bg: #f7f7f7;
-  --accent: var(--duo-green);
-  --accent-strong: var(--duo-green-dark);
-  --accent-bg: rgba(88, 204, 2, 0.12);
-  --accent-border: rgba(88, 204, 2, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --gradient-hero: linear-gradient(135deg, #e30a17 0%, #ff5a2e 55%, #ffb020 100%);
+  --gradient-accent: linear-gradient(135deg, #e30a17 0%, #ff6a3d 100%);
+  --gradient-text: linear-gradient(135deg, #e30a17 0%, #ff8a3d 100%);
+
+  --success: #16a34a;
+  --success-bg: rgba(22, 163, 74, 0.12);
+  --danger: #e11d3a;
+  --danger-bg: rgba(225, 29, 58, 0.1);
+  --info: #2563eb;
+
+  --text: #5a4a48;
+  --text-h: #2a1a1c;
+  --bg: #fff7f4;
+  --bg-solid: #fffaf8;
+  --border: rgba(60, 20, 20, 0.1);
+
+  /* Token del glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-strong: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-blur: blur(20px) saturate(180%);
+  --glass-shadow: 0 8px 32px rgba(163, 25, 20, 0.14), 0 1px 2px rgba(163, 25, 20, 0.06);
+
+  --code-bg: rgba(227, 10, 23, 0.06);
+  --accent: var(--tr-red);
+  --accent-strong: var(--tr-red-deep);
+  --accent-bg: rgba(227, 10, 23, 0.1);
+  --accent-border: rgba(227, 10, 23, 0.35);
+  --ink: #1c1315;
+
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --radius-full: 999px;
 
   --sans: "Archivo", system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: "Archivo", system-ui, "Segoe UI", Roboto, sans-serif;
@@ -42,17 +61,28 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #b4b4b4;
-    --text-h: #f3f4f6;
-    --bg: #131f24;
-    --border: #2b3940;
-    --code-bg: #1c2b32;
-    --accent: #6fda2c;
-    --accent-strong: #89e219;
-    --accent-bg: rgba(111, 218, 44, 0.15);
-    --accent-border: rgba(111, 218, 44, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --text: #d9c3c0;
+    --text-h: #fbeeec;
+    --bg: #170c0d;
+    --bg-solid: #1b0f11;
+    --border: rgba(255, 220, 215, 0.12);
+
+    --glass-bg: rgba(40, 20, 22, 0.55);
+    --glass-bg-strong: rgba(45, 22, 24, 0.78);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.3);
+
+    --code-bg: rgba(255, 106, 61, 0.12);
+    --accent: #ff5d4d;
+    --accent-strong: #ff8a6b;
+    --accent-bg: rgba(255, 93, 77, 0.16);
+    --accent-border: rgba(255, 93, 77, 0.4);
+    --ink: #100809;
+
+    --success: #4ade80;
+    --success-bg: rgba(74, 222, 128, 0.14);
+    --danger: #ff6b81;
+    --danger-bg: rgba(255, 107, 129, 0.14);
   }
 }
 
@@ -64,6 +94,21 @@
   min-height: 100svh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Sfondo decorativo: macchie di colore sfocate, tipiche del glassmorphism */
+#root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(38rem 30rem at 8% -8%, rgba(227, 10, 23, 0.22), transparent 60%),
+    radial-gradient(34rem 28rem at 105% 8%, rgba(255, 176, 32, 0.24), transparent 60%),
+    radial-gradient(30rem 26rem at 50% 115%, rgba(255, 90, 46, 0.16), transparent 60%);
+  pointer-events: none;
 }
 
 body {
